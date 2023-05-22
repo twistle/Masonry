@@ -73,7 +73,7 @@ static CGFloat const kArrayExampleIncrement = 10.0;
 }
 
 - (void)updateConstraints {
-    [self.buttonViews updateConstraints:^(MASConstraintMaker *make) {
+    [self.buttonViews mas_updateConstraints:^(MASConstraintMaker *make) {
         make.baseline.equalTo(self.mas_centerY).with.offset(self.offset);
     }];
     

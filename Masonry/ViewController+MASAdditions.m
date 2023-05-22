@@ -12,9 +12,6 @@
 
 @implementation MAS_VIEW_CONTROLLER (MASAdditions)
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
 - (MASViewAttribute *)mas_topLayoutGuide {
     return [[MASViewAttribute alloc] initWithView:self.view item:self.topLayoutGuide layoutAttribute:NSLayoutAttributeBottom];
 }
@@ -34,8 +31,6 @@
 - (MASViewAttribute *)mas_bottomLayoutGuideBottom {
     return [[MASViewAttribute alloc] initWithView:self.view item:self.bottomLayoutGuide layoutAttribute:NSLayoutAttributeBottom];
 }
-
-#pragma clang diagnostic pop
 
 @end
 

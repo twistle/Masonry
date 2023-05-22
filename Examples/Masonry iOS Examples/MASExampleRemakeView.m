@@ -44,17 +44,17 @@
 // this is Apple's recommended place for adding/updating constraints
 - (void)updateConstraints {
     
-    [self.movingButton remakeConstraints:^(MASConstraintMaker *make) {
+    [self.movingButton mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@(100));
         make.height.equalTo(@(100));
         
         if (self.topLeft) {
-            make.left.equalTo(self.left).with.offset(10);
-            make.top.equalTo(self.top).with.offset(10);
+            make.left.equalTo(self.mas_left).with.offset(10);
+            make.top.equalTo(self.mas_top).with.offset(10);
         }
         else {
-            make.bottom.equalTo(self.bottom).with.offset(-10);
-            make.right.equalTo(self.right).with.offset(-10);
+            make.bottom.equalTo(self.mas_bottom).with.offset(-10);
+            make.right.equalTo(self.mas_right).with.offset(-10);
         }
     }];
     

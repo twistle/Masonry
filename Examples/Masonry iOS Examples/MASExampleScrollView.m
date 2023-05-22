@@ -31,7 +31,7 @@
     self.scrollView = scrollView;
     scrollView.backgroundColor = [UIColor grayColor];
     [self addSubview:scrollView];
-    [self.scrollView makeConstraints:^(MASConstraintMaker *make) {
+    [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
     
@@ -44,7 +44,7 @@
     UIView* contentView = UIView.new;
     [self.scrollView addSubview:contentView];
     
-    [contentView makeConstraints:^(MASConstraintMaker *make) {
+    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.scrollView);
         make.width.equalTo(self.scrollView);
     }];
@@ -61,9 +61,9 @@
         [view addGestureRecognizer:singleTap];
         
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(lastView ? lastView.bottom : @0);
+            make.top.equalTo(lastView ? lastView.mas_bottom : @0);
             make.left.equalTo(@0);
-            make.width.equalTo(contentView.width);
+            make.width.equalTo(contentView.mas_width);
             make.height.equalTo(@(height));
         }];
         
@@ -71,8 +71,8 @@
         lastView = view;
     }
     
-    [contentView makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(lastView.bottom);
+    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(lastView.mas_bottom);
     }];
 }
 

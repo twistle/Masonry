@@ -35,20 +35,6 @@
     UIView *superview = self;
     int padding = 10;
 
-    //if you want to use Masonry without the mas_ prefix
-    //define MAS_SHORTHAND before importing Masonry.h see Masonry iOS Examples-Prefix.pch
-    [greenView makeConstraints:^(MASConstraintMaker *make) {
-        make.top.greaterThanOrEqualTo(superview.top).offset(padding);
-        make.left.equalTo(superview.left).offset(padding);
-        make.bottom.equalTo(blueView.top).offset(-padding);
-        make.right.equalTo(redView.left).offset(-padding);
-        make.width.equalTo(redView.width);
-
-        make.height.equalTo(redView.height);
-        make.height.equalTo(blueView.height);
-        
-    }];
-
     //with is semantic and option
     [redView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(superview.mas_top).with.offset(padding); //with with

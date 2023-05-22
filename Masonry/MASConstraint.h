@@ -228,27 +228,12 @@
 
 /**
  *  Convenience auto-boxing macros for MASConstraint methods.
- *
- *  Defining MAS_SHORTHAND_GLOBALS will turn on auto-boxing for default syntax.
- *  A potential drawback of this is that the unprefixed macros will appear in global scope.
  */
 #define mas_equalTo(...)                 equalTo(MASBoxValue((__VA_ARGS__)))
 #define mas_greaterThanOrEqualTo(...)    greaterThanOrEqualTo(MASBoxValue((__VA_ARGS__)))
 #define mas_lessThanOrEqualTo(...)       lessThanOrEqualTo(MASBoxValue((__VA_ARGS__)))
 
 #define mas_offset(...)                  valueOffset(MASBoxValue((__VA_ARGS__)))
-
-
-#ifdef MAS_SHORTHAND_GLOBALS
-
-#define equalTo(...)                     mas_equalTo(__VA_ARGS__)
-#define greaterThanOrEqualTo(...)        mas_greaterThanOrEqualTo(__VA_ARGS__)
-#define lessThanOrEqualTo(...)           mas_lessThanOrEqualTo(__VA_ARGS__)
-
-#define offset(...)                      mas_offset(__VA_ARGS__)
-
-#endif
-
 
 @interface MASConstraint (AutoboxingSupport)
 

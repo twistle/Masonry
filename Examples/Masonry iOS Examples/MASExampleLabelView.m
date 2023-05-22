@@ -39,14 +39,14 @@ static UIEdgeInsets const kPadding = {10, 10, 10, 10};
     self.longLabel.text = @"Bacon ipsum dolor sit amet spare ribs fatback kielbasa salami, tri-tip jowl pastrami flank short loin rump sirloin. Tenderloin frankfurter chicken biltong rump chuck filet mignon pork t-bone flank ham hock.";
     [self addSubview:self.longLabel];
 
-    [self.longLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.left).insets(kPadding);
-        make.top.equalTo(self.top).insets(kPadding);
+    [self.longLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.mas_left).insets(kPadding);
+        make.top.equalTo(self.mas_top).insets(kPadding);
     }];
 
-    [self.shortLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.longLabel.lastBaseline);
-        make.right.equalTo(self.right).insets(kPadding);
+    [self.shortLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.longLabel.mas_lastBaseline);
+        make.right.equalTo(self.mas_right).insets(kPadding);
     }];
 
     return self;

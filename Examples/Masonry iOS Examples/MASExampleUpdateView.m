@@ -42,7 +42,7 @@
 // this is Apple's recommended place for adding/updating constraints
 - (void)updateConstraints {
 
-    [self.growingButton updateConstraints:^(MASConstraintMaker *make) {
+    [self.growingButton mas_updateConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
         make.width.equalTo(@(self.buttonSize.width)).priorityLow();
         make.height.equalTo(@(self.buttonSize.height)).priorityLow();

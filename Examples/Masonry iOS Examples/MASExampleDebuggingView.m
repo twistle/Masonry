@@ -62,15 +62,15 @@
         make.height.equalTo(redView.mas_height).key(@340954); //anything can be a key
     }];
     
-    [greenView makeConstraints:^(MASConstraintMaker *make) {
-        make.top.greaterThanOrEqualTo(superview.top).offset(padding);
-        make.left.equalTo(superview.left).offset(padding);
-        make.bottom.equalTo(blueView.top).offset(-padding);
-        make.right.equalTo(redView.left).offset(-padding);
-        make.width.equalTo(redView.width);
+    [greenView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.greaterThanOrEqualTo(superview.mas_top).offset(padding);
+        make.left.equalTo(superview.mas_left).offset(padding);
+        make.bottom.equalTo(blueView.mas_top).offset(-padding);
+        make.right.equalTo(redView.mas_left).offset(-padding);
+        make.width.equalTo(redView.mas_width);
 
-        make.height.equalTo(redView.height);
-        make.height.equalTo(blueView.height);
+        make.height.equalTo(redView.mas_height);
+        make.height.equalTo(blueView.mas_height);
     }];
 
     //with is semantic and option

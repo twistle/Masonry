@@ -24,10 +24,10 @@
         [self addSubview:view];
         
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(lastView.topMargin);
-            make.bottom.equalTo(lastView.bottomMargin);
-            make.left.equalTo(lastView.leftMargin);
-            make.right.equalTo(lastView.rightMargin);
+            make.top.equalTo(lastView.mas_topMargin);
+            make.bottom.equalTo(lastView.mas_bottomMargin);
+            make.left.equalTo(lastView.mas_leftMargin);
+            make.right.equalTo(lastView.mas_rightMargin);
         }];
         
         lastView = view;
